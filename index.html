@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отправка звезд</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 Отправитель звезд</h1>
+            <p>Автоматическая отправка звезд вашим любимым каналам</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="balance-section">
+                <h3>Ваш баланс</h3>
+                <div class="balance">0 ⭐</div>
+            </div>
+            
+            <div class="transaction-form">
+                <h3>Новая транзакция</h3>
+                <div class="form-group">
+                    <label for="recipient">Получатель:</</label>
+                    <input type="text" id="recipient" placeholder="@username или ID канала">
+                </div>
+                
+                <div class="form-group">
+                    <label for="amount">Количество:</</label>
+                    <input type="number" id="amount" placeholder="Число звезд" min="1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Сообщение (необязательно):</</label>
+                    <textarea id="message" placeholder="Добавьте сообщение к звездам"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="auto-send">Автоотправка каждые:</</label>
+                    <select id="auto-send">
+                        <option value="0">Только один раз</option>
+                        <option value="1">1 час</option>
+                        <option value="24">1 день</option>
+                        <option value="168">1 неделя</option>
+                    </select>
+                </div>
+                
+                <button id="send-btn" class="btn-primary">Отправить звезды</button>
+            </div>
+            
+            <div class="transaction-history">
+                <h3>Последние транзакции</h3>
+                <div id="history-list" class="history-list">
+                    <!-- Транзакции будут добавляться сюда динамически -->
+                    <div class="empty-state">Пока нет транзакций</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
