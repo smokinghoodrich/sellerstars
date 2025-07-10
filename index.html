@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Донаты Stars в Telegram</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f4f5;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #0088cc;
+        }
+        .donate-btn {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .donate-btn:hover {
+            background-color: #0077b3;
+        }
+        .amount-selector {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .amount-btn {
+            background-color: white;
+            border: 1px solid #0088cc;
+            color: #0088cc;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .amount-btn.selected {
+            background-color: #0088cc;
+            color: white;
+        }
+        .donate-info {
+            margin: 30px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Поддержать проект</h1>
+        <p>Выберите сумму для отправки Stars</p>
+        
+        <div class="amount-selector">
+            <button class="amount-btn" data-amount="100">100 Stars</button>
+            <button class="amount-btn" data-amount="500">500 Stars</button>
+            <button class="amount-btn" data-amount="1000">1000 Stars</button>
+            <button class="amount-btn" data-amount="5000">5000 Stars</button>
+        </div>
+        
+        <div class="donate-info">
+            <p>Stars - это система донатов в Telegram</p>
+            <p>100 Stars ≈ 1 USD</p>
+            <p>Ваша поддержка поможет развитию проекта!</p>
+        </div>
+        
+        <button id="donateButton" class="donate-btn">Отправить Stars</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
